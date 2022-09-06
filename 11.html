@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+     
+        
+        <script>
+            class QuadraticEquation {
+        constructor(a, b, c) {
+          this.a = a;
+          this.b = b;
+          this.c = c;
+        }
+        getDiscriminant() {
+          return this.b ** 2 - 4 * this.a * this.c;
+        }
+        getRoot1() {
+          return (-this.b - Math.sqrt(this.getDiscriminant())) / (2 * this.a);
+        }
+        getRoot2() {
+          return (-this.b + Math.sqrt(this.getDiscriminant())) / (this.a * 2);
+        }
+        getRoot3() {
+          return -this.b / (2 * this.a);
+        }
+      }
+      var a = prompt("nhap a");
+      var b = prompt("nhap b");
+      var c = prompt("nhap c");
+      let qua = new QuadraticEquation(a, b, c);
+      let delta = qua.getDiscriminant();
+      if (delta > 0) {
+        console.log(
+          "phuong trinh co 2 nghiem " + qua.getRoot1() + " va " + qua.getRoot2()
+        );
+      }
+      if (delta == 0) {
+        console.log("phuong trinh co nghiem kep " + qua.getRoot3());
+      }
+      if (delta < 0) {
+        console.log("phuong trinh vo nghiem");
+      }
+
+
+        </script>
+    </body>
+</html>
